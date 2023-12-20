@@ -138,7 +138,7 @@ socket.on('makeMove', ({ roomName, index, player }) => {
  
   
 app.get('/', (req, res) =>{
-  res.sendFile("server joined")
+  res.send("server joined")
 })
 
 
