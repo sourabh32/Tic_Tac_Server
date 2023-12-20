@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: '*',
     credentials: 'true',
   })
 );
@@ -18,7 +18,7 @@ app.use(
 const io = new Server(server, {
   cors: {
     
-    origin: 'http://localhost:5173',
+    origin: '*',
     methods: ['GET', 'POST'],
     credentials: true
   },
