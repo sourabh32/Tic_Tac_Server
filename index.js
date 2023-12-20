@@ -10,14 +10,15 @@ const server = http.createServer(app);
 
 app.use(
   cors({
-    origin: '*',
+    origin: 'http://localhost:5173',
     credentials: 'true',
   })
 );
 
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST'],
     credentials: true
   },
@@ -136,7 +137,9 @@ socket.on('makeMove', ({ roomName, index, player }) => {
   
  
   
-  
+app.get('/', (req, res) =>{
+  res.sendFile("server joined")
+})
 
 
 
